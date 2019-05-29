@@ -8,5 +8,8 @@
     <color name="textColorPrimary">#212121</color>
     <color name="textColorSecondary">#727272</color>
     <color name="historyBackground">#CFD8DC</color>
+    <color name="BackBlue">#0009ff</color>
+    <color name="white">#ffffff</color>
+    <color name="Black">#010203</color>
 
 </resources>
