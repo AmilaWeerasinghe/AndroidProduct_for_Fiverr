@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:elevation="2dp"
+              android:orientation="vertical">
+
+    <!--Separator-->
+    <View
+        android:elevation="2dp"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+
+    <!-- Expression view-->
+    <TextView
+        android:id="@+id/history_expression"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="4dp"
+        android:textColor="@color/textColorSecondary"
+        android:layout_marginTop="2dp"
+        android:textSize="12sp"/>
+
+    <!-- Result view-->
+    <TextView
+        android:elevation="2dp"
+        android:id="@+id/history_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="4dp"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="14sp"/>
+
+
+</LinearLayout>
