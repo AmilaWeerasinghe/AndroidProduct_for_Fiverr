@@ -1,359 +1,390 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout android:id="@+id/parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/BackBlue"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@color/historyBackground"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.mystiko.mycalculator.CalcMainActivity">
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".CalcMainActivity"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
 
     <!--outputs boxes-->
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/answerbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/BackBlue"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="184dp">
 
-        <!--expression output-->
-        <TextView
-            android:id="@+id/expression_output"
-            style="@style/ExpressionOutput"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <!--result output-->
-        <TextView
-            android:id="@+id/result_output"
-            style="@style/ResultOutput"
-            android:layout_marginStart="88dp"
-            android:layout_marginLeft="88dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </android.support.constraint.ConstraintLayout>
-
-
-    <!--history-->
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:id="@+id/history_container"
         style="@style/HistoryContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/BackBlue"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="89dp">
+        >
 
         <TextView
-            android:id="@+id/textView"
             style="@style/HistoryTitle"
-            android:text="@string/history_title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="@string/history_title"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/history_col"
             style="@style/MainCalcHistory"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="28dp"
             android:scrollbars="vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="match_parent"/>
 
-    </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/answerbox"
+        android:layout_toRightOf="@+id/history_container">
+
+        <!--expression output-->
+        <TextView
+            android:id="@+id/expression_output"
+            style="@style/ExpressionOutput"/>
+
+        <!--result output-->
+        <TextView
+            android:id="@+id/result_output"
+            style="@style/ResultOutput"/>
+
+    </LinearLayout>
 
 
-    <Button
-        android:id="@+id/btn7"
-        style="@style/MainCalcOperands"
+    <!--history-->
+
+
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/keypad"
+        android:background="@color/white"
+        android:layout_below="@id/answerbox"
+        android:layout_toRightOf="@id/history_container"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/btn7"
+                style="@style/MainCalcOperands"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="7"
+                android:textColor="@color/Black"
+                />
+
+            <Button
+                android:id="@+id/btn8"
+                style="@style/MainCalcOperands"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="8"
+                android:textColor="@color/Black"
+                />
+
+            <Button
+                android:id="@+id/btn9"
+                style="@style/MainCalcOperands"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="9"
+                android:textColor="@color/Black"
+                />
+
+            <Button
+                android:id="@+id/btnDel"
+                style="@style/MainCalcFunctions"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="xdel"
+                android:textColor="@color/Black"
+                />
+
+            <Button
+                android:id="@+id/btnClear"
+                style="@style/MainCalcClear"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/clearExp"
+                android:textColor="@color/Black"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/btn4"
+                style="@style/MainCalcOperands"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/four"
+                android:textColor="@color/Black"
+                />
+
+            <Button
+                android:id="@+id/btn5"
+                style="@style/MainCalcOperands"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/five"
+                android:textColor="@color/Black"
+                />
+
+            <Button
+                android:id="@+id/btn6"
+                style="@style/MainCalcOperands"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/six"
+                android:textColor="@color/Black"
+                />
+
+
+            <!--| + |-->
+            <Button
+                android:id="@+id/btnAdd"
+                style="@style/MainCalcOperators"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/add"
+                android:textColor="@color/Black"
+                />
+
+            <Button
+                android:id="@+id/btnSub"
+                style="@style/MainCalcOperators"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/sub"
+                android:textColor="@color/Black"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+            >
+
+
+            <Button
+                android:id="@+id/btn1"
+                style="@style/MainCalcOperands"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:onClick="btn1"
+                android:text="@string/one"
+                android:textColor="@color/Black"
+                />
+
+            <Button
+                android:id="@+id/btn2"
+                style="@style/MainCalcOperands"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/two"
+                android:textColor="@color/Black"
+                />
+
+
+            <Button
+                android:id="@+id/btn3"
+                style="@style/MainCalcOperands"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/three"
+                android:textColor="@color/Black"
+                />
+
+            <Button
+                android:id="@+id/btnMul"
+                style="@style/MainCalcOperators"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/mul"
+                android:textColor="@color/Black"
+                />
+
+            <!--| / |-->
+            <Button
+                android:id="@+id/btnDiv"
+                style="@style/MainCalcOperators"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/div"
+                android:textColor="@color/Black"
+                />
+
+            <!--| x |-->
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+
+            <Button
+                android:id="@+id/btnPeriod"
+                style="@style/MainCalcOperands"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/period"
+                android:textColor="@color/Black"
+                />
+
+
+            <Button
+                android:id="@+id/btn0"
+                style="@style/MainCalcOperands"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/zero"
+                android:textColor="@color/Black"
+                />
+            <!--| log |-->
+            <Button
+                android:id="@+id/btnLog"
+                style="@style/MainCalcOperators"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/log"
+                android:textColor="@color/Black"
+                />
+
+            <Button
+                android:id="@+id/btnRemainder"
+                style="@style/MainCalcOperators"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/remainder"
+                android:textColor="@color/Black"
+                />
+
+            <Button
+                android:id="@+id/btnEq"
+                style="@style/MainCalcOperators"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/eq"
+                android:textColor="@color/Black"
+                />
+
+
+            <!--| . |-->
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/btnAns"
+                style="@style/MainCalcFunctions"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/ans"
+                android:textColor="@color/Black"
+                />
+
+            <Button
+                android:id="@+id/btnExponent"
+                style="@style/MainCalcOperators"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/exponent"
+                android:textColor="@color/Black"
+                android:textSize="25sp"
+                />
+
+            <Button
+                android:id="@+id/btnClearHistory"
+                style="@style/MainCalcClear"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/clearHistory"
+                android:textColor="@color/Black"
+                android:textSize="11sp"
+                />
+
+            <Button
+                android:id="@+id/btnBrackets"
+                style="@style/MainCalcFunctions"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:text="@string/brackets"
+                android:textColor="@color/Black"
+                />
+            <!--| ^ |-->
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_gravity="end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="7"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="313dp" />
-
-    <Button
-        android:id="@+id/btn8"
-        style="@style/MainCalcOperands"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="8"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="306dp" />
-
-    <Button
-        android:id="@+id/btn9"
-        style="@style/MainCalcOperands"
-        android:layout_width="25dp"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="9"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="206dp"
-        tools:layout_editor_absoluteY="321dp" />
-
-    <Button
-        android:id="@+id/btnDel"
-        style="@style/MainCalcFunctions"
-        android:layout_width="25dp"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="xdel"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="343dp"
-        tools:layout_editor_absoluteY="297dp" />
-
-    <Button
-        android:id="@+id/btnClear"
-        style="@style/MainCalcClear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/clearExp"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="243dp"
-        tools:layout_editor_absoluteY="297dp" />
-
-
-    <Button
-        android:id="@+id/btn4"
-        style="@style/MainCalcOperands"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/four"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="361dp" />
-
-    <Button
-        android:id="@+id/btn5"
-        style="@style/MainCalcOperands"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/five"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="104dp"
-        tools:layout_editor_absoluteY="361dp" />
-
-    <Button
-        android:id="@+id/btn6"
-        style="@style/MainCalcOperands"
-        android:layout_width="25dp"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/six"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="202dp"
-        tools:layout_editor_absoluteY="366dp" />
-
-
-    <!--| + |-->
-    <Button
-        android:id="@+id/btnAdd"
-        style="@style/MainCalcOperators"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/add"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="231dp"
-        tools:layout_editor_absoluteY="374dp" />
-
-    <Button
-        android:id="@+id/btnSub"
-        style="@style/MainCalcOperators"
-        android:layout_width="25dp"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/sub"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="331dp"
-        tools:layout_editor_absoluteY="382dp" />
-
-
-    <Button
-        android:id="@+id/btn1"
-        style="@style/MainCalcOperands"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:onClick="btn1"
-        android:text="@string/one"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="13dp"
-        tools:layout_editor_absoluteY="446dp" />
-
-    <Button
-        android:id="@+id/btn2"
-        style="@style/MainCalcOperands"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/two"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="441dp" />
-
-
-    <Button
-        android:id="@+id/btn3"
-        style="@style/MainCalcOperands"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/three"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="187dp"
-        tools:layout_editor_absoluteY="438dp" />
-
-    <Button
-        android:id="@+id/btnMul"
-        style="@style/MainCalcOperators"
-        android:layout_width="30dp"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/mul"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="446dp" />
-
-    <!--| / |-->
-    <Button
-        android:id="@+id/btnDiv"
-        style="@style/MainCalcOperators"
-        android:layout_width="25dp"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/div"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="327dp"
-        tools:layout_editor_absoluteY="462dp" />
-
-    <!--| x |-->
-
-
-    <Button
-        android:id="@+id/btnClearHistory"
-        style="@style/MainCalcClear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/clearHistory"
-        android:textColor="@color/Black"
-        android:textSize="11sp"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="541dp" />
-
-    <Button
-        android:id="@+id/btn0"
-        style="@style/MainCalcOperands"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/zero"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="489dp" />
-    <!--| log |-->
-    <Button
-        android:id="@+id/btnLog"
-        style="@style/MainCalcOperators"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/log"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="248dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <Button
-        android:id="@+id/btnRemainder"
-        style="@style/MainCalcOperators"
-        android:layout_width="25dp"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/remainder"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="291dp"
-        tools:layout_editor_absoluteY="505dp" />
-
-    <Button
-        android:id="@+id/btnEq"
-        style="@style/MainCalcOperators"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/eq"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="541dp" />
-
-
-    <Button
-        android:id="@+id/btnAns"
-        style="@style/MainCalcFunctions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/ans"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="541dp" />
-    <!--| . |-->
-    <Button
-        android:id="@+id/btnPeriod"
-        style="@style/MainCalcOperands"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/period"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="489dp" />
-
-    <Button
-        android:id="@+id/btnBrackets"
-        style="@style/MainCalcFunctions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/brackets"
-        android:textColor="@color/Black"
-        tools:layout_editor_absoluteX="227dp"
-        tools:layout_editor_absoluteY="56dp" />
-    <!--| ^ |-->
-    <Button
-        android:id="@+id/btnExponent"
-        style="@style/MainCalcOperators"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:text="@string/exponent"
-        android:textColor="@color/Black"
-        android:textSize="25sp"
-        tools:layout_editor_absoluteX="171dp"
-        tools:layout_editor_absoluteY="491dp" />
-
-
-</android.support.constraint.ConstraintLayout>
+        android:layout_toRightOf="@id/history_container"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
 
 
 
 
 
 
+
+
+
+
+
+
+</RelativeLayout>

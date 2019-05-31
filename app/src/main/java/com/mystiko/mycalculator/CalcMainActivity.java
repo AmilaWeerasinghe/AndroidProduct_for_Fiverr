@@ -9,6 +9,9 @@ import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.io.File;
 import java.util.List;
 
@@ -27,6 +30,8 @@ public class CalcMainActivity extends AppCompatActivity implements CalcMainActiv
     RecyclerView historyRecyclerView;
     static View parentView;
 
+    private AdView mAdView;
+
 
     private AlphaAnimation buttonClicked = new AlphaAnimation(1F, 0.7F);
     private AlphaAnimation buttonLongClicked = new AlphaAnimation(1F, 0.4F);
@@ -36,6 +41,10 @@ public class CalcMainActivity extends AppCompatActivity implements CalcMainActiv
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         expressionView = (TextView) findViewById(R.id.expression_output);
         resultView = (TextView) findViewById(R.id.result_output);
