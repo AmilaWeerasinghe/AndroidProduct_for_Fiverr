@@ -2,13 +2,10 @@
 <RelativeLayout android:id="@+id/parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/historyBackground"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/BackBlue"
+
     tools:context=".CalcMainActivity"
     xmlns:ads="http://schemas.android.com/apk/res-auto">
 
@@ -33,6 +30,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="60dp"
         android:orientation="vertical"
         android:id="@+id/answerbox"
         android:layout_toRightOf="@+id/history_container">
@@ -55,9 +53,10 @@
 
     <LinearLayout android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@id/adView"
         android:id="@+id/keypad"
         android:background="@color/white"
-        android:layout_below="@id/answerbox"
+
         android:layout_toRightOf="@id/history_container"
         android:orientation="vertical"
         xmlns:android="http://schemas.android.com/apk/res/android">
@@ -72,8 +71,8 @@
             <Button
                 android:id="@+id/btn7"
                 style="@style/MainCalcOperands"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="7"
                 android:textColor="@color/Black"
@@ -82,8 +81,8 @@
             <Button
                 android:id="@+id/btn8"
                 style="@style/MainCalcOperands"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="8"
                 android:textColor="@color/Black"
@@ -92,8 +91,8 @@
             <Button
                 android:id="@+id/btn9"
                 style="@style/MainCalcOperands"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="9"
                 android:textColor="@color/Black"
@@ -102,8 +101,8 @@
             <Button
                 android:id="@+id/btnDel"
                 style="@style/MainCalcFunctions"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="xdel"
                 android:textColor="@color/Black"
@@ -112,9 +111,10 @@
             <Button
                 android:id="@+id/btnClear"
                 style="@style/MainCalcClear"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
+
+                android:background="@drawable/iconsmul"
                 android:text="@string/clearExp"
                 android:textColor="@color/Black"
                 />
@@ -129,8 +129,8 @@
             <Button
                 android:id="@+id/btn4"
                 style="@style/MainCalcOperands"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/four"
                 android:textColor="@color/Black"
@@ -139,8 +139,8 @@
             <Button
                 android:id="@+id/btn5"
                 style="@style/MainCalcOperands"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/five"
                 android:textColor="@color/Black"
@@ -149,8 +149,8 @@
             <Button
                 android:id="@+id/btn6"
                 style="@style/MainCalcOperands"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/six"
                 android:textColor="@color/Black"
@@ -161,8 +161,8 @@
             <Button
                 android:id="@+id/btnAdd"
                 style="@style/MainCalcOperators"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/add"
                 android:textColor="@color/Black"
@@ -171,8 +171,8 @@
             <Button
                 android:id="@+id/btnSub"
                 style="@style/MainCalcOperators"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/sub"
                 android:textColor="@color/Black"
@@ -189,8 +189,8 @@
             <Button
                 android:id="@+id/btn1"
                 style="@style/MainCalcOperands"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:onClick="btn1"
                 android:text="@string/one"
@@ -200,8 +200,8 @@
             <Button
                 android:id="@+id/btn2"
                 style="@style/MainCalcOperands"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/two"
                 android:textColor="@color/Black"
@@ -211,8 +211,8 @@
             <Button
                 android:id="@+id/btn3"
                 style="@style/MainCalcOperands"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/three"
                 android:textColor="@color/Black"
@@ -221,8 +221,8 @@
             <Button
                 android:id="@+id/btnMul"
                 style="@style/MainCalcOperators"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/mul"
                 android:textColor="@color/Black"
@@ -232,8 +232,8 @@
             <Button
                 android:id="@+id/btnDiv"
                 style="@style/MainCalcOperators"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/div"
                 android:textColor="@color/Black"
@@ -253,8 +253,8 @@
             <Button
                 android:id="@+id/btnPeriod"
                 style="@style/MainCalcOperands"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/period"
                 android:textColor="@color/Black"
@@ -264,8 +264,8 @@
             <Button
                 android:id="@+id/btn0"
                 style="@style/MainCalcOperands"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/zero"
                 android:textColor="@color/Black"
@@ -274,8 +274,8 @@
             <Button
                 android:id="@+id/btnLog"
                 style="@style/MainCalcOperators"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/log"
                 android:textColor="@color/Black"
@@ -284,8 +284,8 @@
             <Button
                 android:id="@+id/btnRemainder"
                 style="@style/MainCalcOperators"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/remainder"
                 android:textColor="@color/Black"
@@ -294,10 +294,9 @@
             <Button
                 android:id="@+id/btnEq"
                 style="@style/MainCalcOperators"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:text="@string/eq"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
+                android:background="@drawable/equal"
                 android:textColor="@color/Black"
                 />
 
@@ -316,8 +315,8 @@
             <Button
                 android:id="@+id/btnAns"
                 style="@style/MainCalcFunctions"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/ans"
                 android:textColor="@color/Black"
@@ -326,8 +325,8 @@
             <Button
                 android:id="@+id/btnExponent"
                 style="@style/MainCalcOperators"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/exponent"
                 android:textColor="@color/Black"
@@ -337,8 +336,8 @@
             <Button
                 android:id="@+id/btnClearHistory"
                 style="@style/MainCalcClear"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/clearHistory"
                 android:textColor="@color/Black"
@@ -348,8 +347,8 @@
             <Button
                 android:id="@+id/btnBrackets"
                 style="@style/MainCalcFunctions"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
+                android:layout_width="45dp"
+                android:layout_height="60dp"
                 android:background="@color/white"
                 android:text="@string/brackets"
                 android:textColor="@color/Black"

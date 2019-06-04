@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/BackBlue</item>
         <item name="android:typeface">sans</item>
     </style>
 
@@ -13,8 +13,8 @@
     <style name="ExpressionOutput">
         <item name="android:layout_marginBottom">5dp</item>
         <item name="android:layout_marginTop">5dp</item>
-        <item name="android:background">@color/colorPrimary</item>
-        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:background">@color/BackBlue</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:layout_above">@+id/result_output</item>
         <item name="android:layout_alignParentTop">true</item>
         <item name="android:layout_alignParentLeft">true</item>
@@ -22,7 +22,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">5dp</item>
-        <item name="android:text">0</item>
+        <item name="android:text"></item>
         <item name="android:textSize">24sp</item>
     </style>
 
@@ -33,15 +33,15 @@
         <item name="android:ellipsize">end</item>
         <item name="android:layout_marginBottom">5dp</item>
         <item name="android:layout_marginTop">5dp</item>
-        <item name="android:background">@color/colorPrimaryLight</item>
-        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:background">@color/BackBlue</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_alignParentLeft">true</item>
         <item name="android:gravity">right|bottom</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">5dp</item>
-        <item name="android:text">0</item>
+        <item name="android:text"></item>
         <item name="android:textSize">24sp</item>
     </style>
 
@@ -59,7 +59,7 @@
     <style name="HistoryTitle">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/textPrimary</item>
-        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:background">@color/BackBlue</item>
         <item name="android:layout_margin">4dp</item>
         <item name="android:elevation">10dp</item>
         <item name="android:layout_gravity">top</item>
@@ -72,7 +72,7 @@
         <item name="android:textSize">14sp</item>
         <item name="android:layout_margin">2dp</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:background">@color/historyBackground</item>
+        <item name="android:background">@color/BackBlue</item>
         <item name="android:elevation">4dp</item>
         <item name="android:layout_height">match_parent</item>
     </style>
@@ -82,7 +82,7 @@
     <style name="MainCalcOperands">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/textPrimary</item>
-        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:background">@color/BackBlue</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_width">50dp</item>
         <item name="android:layout_margin">3dp</item>
@@ -117,8 +117,6 @@
     <!--Clear Button styles-->
     <style name="MainCalcClear">
         <item name="android:textSize">13sp</item>
-        <item name="android:textColor">@color/textColorPrimary</item>
-        <item name="android:background">@color/colorPrimaryLight</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_width">50dp</item>
         <item name="android:layout_margin">3dp</item>
