@@ -103,7 +103,7 @@
                 style="@style/MainCalcFunctions"
                 android:layout_width="45dp"
                 android:layout_height="60dp"
-                android:background="@drawable/delete"
+                android:background="@drawable/delbut"
 
                 android:textColor="@color/Black"
                 />
@@ -113,8 +113,7 @@
                 style="@style/MainCalcClear"
                 android:layout_width="45dp"
                 android:layout_height="60dp"
-                android:background="@drawable/can"
-                android:text="@string/clearExp"
+                android:background="@drawable/clearbut"
                 />
         </LinearLayout>
 
@@ -294,7 +293,7 @@
                 style="@style/MainCalcOperators"
                 android:layout_width="45dp"
                 android:layout_height="60dp"
-                android:background="@drawable/equu"
+                android:background="@drawable/equbut"
                 android:textColor="@color/Black"
                 />
 
