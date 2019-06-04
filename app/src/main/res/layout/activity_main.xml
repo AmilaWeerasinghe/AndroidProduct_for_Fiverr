@@ -103,8 +103,8 @@
                 style="@style/MainCalcFunctions"
                 android:layout_width="45dp"
                 android:layout_height="60dp"
-                android:background="@color/white"
-                android:text="xdel"
+                android:background="@drawable/delete"
+
                 android:textColor="@color/Black"
                 />
 
@@ -113,10 +113,8 @@
                 style="@style/MainCalcClear"
                 android:layout_width="45dp"
                 android:layout_height="60dp"
-
-                android:background="@drawable/iconsmul"
+                android:background="@drawable/can"
                 android:text="@string/clearExp"
-                android:textColor="@color/Black"
                 />
         </LinearLayout>
 
@@ -296,7 +294,7 @@
                 style="@style/MainCalcOperators"
                 android:layout_width="45dp"
                 android:layout_height="60dp"
-                android:background="@drawable/equal"
+                android:background="@drawable/equu"
                 android:textColor="@color/Black"
                 />
 
